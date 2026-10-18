@@ -1,0 +1,4 @@
+{
+  "name": "getAuthorizedTimeline",
+  "entry": "entry.ts"
+}

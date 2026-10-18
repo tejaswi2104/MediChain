@@ -71,10 +71,18 @@ export async function expireOldConsents(base44) {
   return stale.length;
 }
 
+
 export async function getConsentById(base44, consentId) {
-  const page = await base44.asServiceRole.entities.Consent.filter({ id: String(consentId) }, { limit: 1 });
-  return (page.items || [])[0] || null;
+  if (!consentId) return null;
+
+  try {
+    return await base44.asServiceRole.entities.Consent.get(String(consentId));
+  } catch (error) {
+    console.error("getConsentById failed:", error);
+    return null;
+  }
 }
+
 
 // THE KEY SECURITY RULE: the only way a doctor's view gets patient data.
 // Re-checks consent validity on every call. Emergency scope returns only

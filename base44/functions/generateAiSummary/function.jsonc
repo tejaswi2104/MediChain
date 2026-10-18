@@ -1,0 +1,4 @@
+{
+  "name": "generateAiSummary",
+  "entry": "entry.ts"
+}
