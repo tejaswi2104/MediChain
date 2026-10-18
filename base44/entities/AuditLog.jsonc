@@ -1,0 +1,38 @@
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "abha_id": {
+      "type": "string"
+    },
+    "consent_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "REQUESTED",
+        "APPROVED",
+        "DENIED",
+        "REVOKED",
+        "EXPIRED",
+        "DATA_ACCESSED"
+      ]
+    },
+    "actor": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string",
+      "default": ""
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "abha_id",
+    "action",
+    "timestamp"
+  ]
+}

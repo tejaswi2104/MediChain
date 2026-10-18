@@ -1,0 +1,49 @@
+{
+  "name": "MedicalRecord",
+  "type": "object",
+  "properties": {
+    "abha_id": {
+      "type": "string"
+    },
+    "record_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "Consultation",
+        "Prescription",
+        "Lab Report",
+        "Vaccination",
+        "Discharge Summary",
+        "Diagnostic Report"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "details": {
+      "type": "string",
+      "default": ""
+    },
+    "provider_name": {
+      "type": "string",
+      "default": ""
+    },
+    "is_critical": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_abnormal": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "abha_id",
+    "record_date",
+    "record_type",
+    "title"
+  ]
+}

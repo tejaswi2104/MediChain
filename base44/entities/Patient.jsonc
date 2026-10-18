@@ -1,0 +1,61 @@
+{
+  "name": "Patient",
+  "type": "object",
+  "properties": {
+    "abha_id": {
+      "type": "string",
+      "description": "ABHA ID, e.g. ABHA-123"
+    },
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "blood_group": {
+      "type": "string",
+      "enum": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-"
+      ]
+    },
+    "emergency_contact_name": {
+      "type": "string",
+      "default": ""
+    },
+    "emergency_contact_phone": {
+      "type": "string",
+      "default": ""
+    },
+    "allergies": {
+      "type": "string",
+      "default": "",
+      "description": "Comma-separated list"
+    },
+    "chronic_conditions": {
+      "type": "string",
+      "default": "",
+      "description": "Comma-separated list"
+    },
+    "current_medicines": {
+      "type": "string",
+      "default": "",
+      "description": "Comma-separated list"
+    }
+  },
+  "required": [
+    "abha_id",
+    "name",
+    "age",
+    "blood_group"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Consent",
+  "type": "object",
+  "properties": {
+    "abha_id": {
+      "type": "string"
+    },
+    "doctor_name": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string",
+      "enum": [
+        "full",
+        "emergency"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Denied",
+        "Revoked",
+        "Expired"
+      ]
+    },
+    "is_emergency": {
+      "type": "boolean",
+      "default": false
+    },
+    "duration_minutes": {
+      "type": "integer",
+      "default": 1440
+    },
+    "requested_at": {
+      "type": "string"
+    },
+    "approved_at": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "ended_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "abha_id",
+    "doctor_name",
+    "purpose",
+    "status"
+  ]
+}

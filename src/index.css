@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 214 72% 16%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 214 72% 16%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 213 21% 44%;
+    --accent: 176 80% 37%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 354 69% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* ---------- MediChain custom components ---------- */
+.mc-hero {
+  background: linear-gradient(120deg, #0B2545 0%, #133B6B 55%, #13A89E 140%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 40px 44px;
+  box-shadow: 0 10px 30px rgba(11, 37, 69, 0.25);
+}
+.mc-card {
+  background: #ffffff;
+  border: 1px solid #E4EBF2;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(11, 37, 69, 0.08);
+  color: #0B2545;
+  padding: 20px 24px;
+}
+.mc-card-plain {
+  background: #F6F9FC;
+  border: 1px solid #E4EBF2;
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #0B2545;
+}
+.mc-alert-critical {
+  background: #FDECEC;
+  border: 1px solid #F3B6BC;
+  color: #8C1A26;
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+.mc-alert-ok {
+  background: #E9F7F0;
+  border: 1px solid #A9DCC4;
+  color: #16603C;
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+.mc-alert-warn {
+  background: #FFF6E5;
+  border: 1px solid #F2D9A4;
+  color: #8A5A00;
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+.mc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 3px 10px;
+  background: #EEF4F9;
+  color: #0B2545;
+}
+.mc-badge-danger { background: #FDECEC; color: #A01526; }
+.mc-badge-success { background: #E9F7F0; color: #16603C; }
+.mc-badge-warn { background: #FFF6E5; color: #8A5A00; }
+.mc-badge-primary { background: #0B2545; color: #ffffff; }
+.mc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #EEF4F9;
+  border: 1px solid #D3E0EC;
+  color: #0B2545;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.mc-chip-danger { background: #FDECEC; border-color: #F3B6BC; color: #A01526; }
+.mc-timeline { position: relative; padding-left: 26px; }
+.mc-timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #D3E0EC;
+  border-radius: 2px;
+}
+.mc-timeline-item { position: relative; margin-bottom: 14px; }
+.mc-timeline-dot {
+  position: absolute;
+  left: -22px;
+  top: 18px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #13A89E;
+  box-shadow: 0 0 0 3px rgba(19, 168, 158, 0.18);
+}
+.mc-timeline-dot-critical {
+  background: #D62839;
+  box-shadow: 0 0 0 3px rgba(214, 40, 57, 0.16);
+}
+.mc-step { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: #5B7189; }
+.mc-step-active { color: #0B2545; }
+.mc-step-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: #EEF4F9;
+  color: #5B7189;
+  flex-shrink: 0;
+}
+.mc-step-dot-active { background: #13A89E; color: #ffffff; }
+.mc-step-line { height: 2px; flex: 1; min-width: 24px; background: #D3E0EC; }
